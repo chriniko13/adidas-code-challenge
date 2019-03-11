@@ -1,0 +1,98 @@
+version: '3.3'
+
+services:
+
+  # Infrastructure
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  redis:
+    image: redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - redis-data:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    expose:
+      - '6379'
+
+  redis-commander:
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    expose:
+      - '8081'
+    depends_on:
+      - redis
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - kafka-data:/data
+      - kafka-logs:/logs
+
+
+  # Platform's Micro-services
+  routes-service:
+    image: chriniko/routes-service:1.0.0
+    depends_on:
+      - mysql
+      - redis
+      - redis-commander
+    ports:
+      - 8080:8080
+    volumes:
+      - /data/routes-service-app
+
+  itineraries-lookup-service:
+    image: chriniko/itineraries-lookup-service:1.0.0
+    depends_on:
+      - kafka
+      - routes-service
+    ports:
+      - 8181:8181
+    volumes:
+      - /data/itineraries-lookup-service-app
+
+
+
+volumes:
+  my-db:
+  redis-data:
+  kafka-data:
+  kafka-logs:

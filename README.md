@@ -78,4 +78,36 @@
 
 
 #### How to run it?
+
 TODO
+
+
+#### Useful Docker Commands
+
+* `docker ps`
+
+* `docker-compose logs <container_name>`, eg: `docker-compose logs routes-service`
+
+* `docker container ls`
+
+* `docker image ls`
+
+* `docker volume ls`
+
+* `docker network ls`
+
+* `docker info`
+
+* `docker-compose ps`
+
+* `docker-compose images`
+
+#### Useful Docker Commands - Use with caution
+
+* `docker system prune`
+
+* `docker volume prune`
+
+* `docker container prune`
+
+* `docker image prune`
