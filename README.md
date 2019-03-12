@@ -594,6 +594,16 @@
     * [Screenshot2](Selection02.pdf)
     
 
+#### TODOs
+* Add at least one unit test in [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) [NOT DONE]
+
+* Add at least one integration test (with the help of Wiremock) in [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) [NOT DONE]
+
+* Add security to both microservices
+    * [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) [NOT DONE]
+    * [Routes Service](https://github.com/chriniko13/routes-service) [NOT DONE]
+    
+* Use Spring Cloud, Eureka and Zuul [NOT DONE]
 
 #### Useful Docker Commands
 
