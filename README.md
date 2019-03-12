@@ -32,6 +32,11 @@ Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8' 
 
 ##### Assignee: Nikolaos Christidis (nick.christidis@yahoo.com)
 
+
+#### Overview
+![alt text](architecture_diagram.jpg)
+
+
 #### Microservices
 
 * [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) which provides itinerary lookup operation
@@ -78,10 +83,6 @@ Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8' 
 * Redis
 * Redis Commander (WebUI for Redis)
 * Kafka
-
-
-#### Architecture
-![alt text](architecture_diagram.jpg)
 
 
 #### Prerequisites
