@@ -1,29 +1,33 @@
 ### Adidas Backend Assignment
 
 ```
-
-      _           _    __       _                             ___                   _                
-     /.\       ___FJ   LJ    ___FJ     ___ _     ____       ,"___".    ____      ___FJ     ____      
-    //_\\     F __  L       F __  L   F __` L   F ___J      FJ---L]   F __ J    F __  L   F __ J     
-   / ___ \   | |--| |  FJ  | |--| |  | |--| |  | '----_    J |   LJ  | |--| |  | |--| |  | _____J    
-  / L___J \  F L__J J J  L F L__J J  F L__J J  )-____  L   | \___--. F L__J J  F L__J J  F L___--.   
- J__L   J__LJ\____,__LJ__LJ\____,__LJ\____,__LJ\______/F   J\_____/FJ\______/FJ\____,__LJ\______/F   
- |__L   J__| J____,__F|__| J____,__F J____,__F J______F     J_____F  J______F  J____,__F J______F    
-              ___      _                 __  __                                                      
-            ,"___".   FJ___      ___ _   LJ  LJ    ____     _ ___      ___ _     ____                
-            FJ---L]  J  __ `.   F __` L  FJ  FJ   F __ J   J '__ J    F __` L   F __ J               
-           J |   LJ  | |--| |  | |--| | J  LJ  L | _____J  | |__| |  | |--| |  | _____J              
-           | \___--. F L  J J  F L__J J J  LJ  L F L___--. F L  J J  F L__J J  F L___--.             
-           J\_____/FJ__L  J__LJ\____,__LJ__LJ__LJ\______/FJ__L  J__L )-____  LJ\______/F             
-            J_____F |__L  J__| J____,__F|__||__| J______F |__L  J__|J\______/F J______F              
-                  ___      _                __            __    _    J______F                        
-                ,"___".   FJ___     _ ___   LJ   _ ___    LJ   FJ __      ____                       
-                FJ---L]  J  __ `.  J '__ ",     J '__ J       J |/ /L    F __ J                      
-               J |   LJ  | |--| |  | |__|-J FJ  | |__| |  FJ  |    \    | |--| |                     
-               | \___--. F L  J J  F L  `-'J  L F L  J J J  L F L:\ J   F L__J J                     
-               J\_____/FJ__L  J__LJ__L     J__LJ__L  J__LJ__LJ__L \\_J.J\______/F                    
-                J_____F |__L  J__||__L     |__||__L  J__||__||__L  \L_| J______F                     
-                                                                                                     
+     ,gggg,                                             ,gggg,                                                                                   
+   ,88"""Y8b,                      8I                 ,88"""Y8b, ,dPYb,                 ,dPYb, ,dPYb,                                            
+  d8"     `Y8                      8I                d8"     `Y8 IP'`Yb                 IP'`Yb IP'`Yb                                            
+ d8'   8b  d8                      8I               d8'   8b  d8 I8  8I                 I8  8I I8  8I                                            
+,8I    "Y88P'                      8I              ,8I    "Y88P' I8  8'                 I8  8' I8  8'                                            
+I8'             ,ggggg,      ,gggg,8I   ,ggg,      I8'           I8 dPgg,     ,gggg,gg  I8 dP  I8 dP   ,ggg,    ,ggg,,ggg,     ,gggg,gg   ,ggg,  
+d8             dP"  "Y8ggg  dP"  "Y8I  i8" "8i     d8            I8dP" "8I   dP"  "Y8I  I8dP   I8dP   i8" "8i  ,8" "8P" "8,   dP"  "Y8I  i8" "8i 
+Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8'    ,8I  I8P    I8P    I8, ,8I  I8   8I   8I  i8'    ,8I  I8, ,8I 
+`Yba,,_____, ,d8,   ,d8'  ,d8,   ,d8b, `YbadP'     `Yba,,_____, ,d8     I8,,d8,   ,d8b,,d8b,_ ,d8b,_  `YbadP' ,dP   8I   Yb,,d8,   ,d8I  `YbadP' 
+  `"Y8888888 P"Y8888P"    P"Y8888P"`Y8888P"Y888      `"Y8888888 88P     `Y8P"Y8888P"`Y88P'"Y888P'"Y88888P"Y8888P'   8I   `Y8P"Y8888P"888888P"Y888
+                                                                                                                                   ,d8I'         
+                                                                                                                                 ,dP'8I          
+                                                                                                                                ,8"  8I          
+                                                                                                                                I8   8I          
+                                                                                                                                `8, ,8I          
+                                                                                                                                 `Y8P"           
+                     ,gggg,                                                                                                                      
+                   ,88"""Y8b, ,dPYb,                                          ,dPYb,                                                             
+                  d8"     `Y8 IP'`Yb                                          IP'`Yb                                                             
+                 d8'   8b  d8 I8  8I                 gg                  gg   I8  8I                                                             
+                ,8I    "Y88P' I8  8'                 ""                  ""   I8  8bgg,                                                          
+                I8'           I8 dPgg,    ,gggggg,   gg    ,ggg,,ggg,    gg   I8 dP" "8    ,ggggg,                                               
+                d8            I8dP" "8I   dP""""8I   88   ,8" "8P" "8,   88   I8d8bggP"   dP"  "Y8ggg                                            
+                Y8,           I8P    I8  ,8'    8I   88   I8   8I   8I   88   I8P' "Yb,  i8'    ,8I                                              
+                `Yba,,_____, ,d8     I8,,dP     Y8,_,88,_,dP   8I   Yb,_,88,_,d8    `Yb,,d8,   ,d8'                                              
+                  `"Y8888888 88P     `Y88P      `Y88P""Y88P'   8I   `Y88P""Y888P      Y8P"Y8888P"                                                
+                                                                                                                                       
 ```
 
 ##### Assignee: Nikolaos Christidis (nick.christidis@yahoo.com)
