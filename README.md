@@ -72,7 +72,7 @@
 #### Infrastructure
 * MySQL
 * Redis
-* Redis Commander
+* Redis Commander (WebUI for Redis)
 * Kafka
 
 
@@ -81,16 +81,19 @@
 
 
 #### How to run it?
-
 1) Git clone/Download [Routes Service](https://github.com/chriniko13/routes-service) 
    go in project folder and execute: `mvn clean install -DskipUTs=true -DskipITs && docker build -t chriniko/routes-service:1.0.0 .`
+
 
 2) Git clone/Download [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service)
    go in project folder and execute: `mvn clean install -DskipUTs=true -DskipITs && docker build -t chriniko/itineraries-lookup-service:1.0.0 .`
 
+
 3) Now in this project folder execute: `docker-compose up -d`
 
+
 4) Wait for 10 seconds
+
 
 5) Execute: `docker ps`, you should see something like the following:
    ```
@@ -105,7 +108,8 @@
 
    ```
    
-   We can see that our Infrastructure and Microservices are up and running
+   We can see that our Infrastructure and Microservices are up and running.
+
 
 6) Execute: `docker-compose logs routes-service` to see that we do not have any error logs.
    You should see something like the following:
@@ -142,6 +146,7 @@
    routes-service_1              | 2019-03-12 00:29:12.693  INFO f9c0e174c8d9 --- [           main] c.a.c.r.RoutesServiceApplication         : Started RoutesServiceApplication in 14.313 seconds (JVM running for 17.476)
 
    ```
+
 
 7) Execute: `docker-compose logs itineraries-lookup-service` to see that we do not have any error logs.
    You should see something like the following:
@@ -250,8 +255,9 @@
 
    ```
 
-8) Now it is time to find a root city(appear only as origin city and not as destiny) from [Routes Service](https://github.com/chriniko13/routes-service)
-   Connect to mysql of [Routes Service](https://github.com/chriniko13/routes-service) 
+
+8) Now it is time to find a root city (appears only as origin city and not as destiny) from [Routes Service](https://github.com/chriniko13/routes-service).
+   Connect to mysql db of [Routes Service](https://github.com/chriniko13/routes-service).
    Connection Info: (jdbc:mysql://localhost:3306/db, username: user, password: user, you can see that from `docker-compose.yml`)
    And execute the following sql:
    
@@ -581,8 +587,11 @@
 10) If you request again the same itinerary response time is a lot faster due to the fact that
     [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) uses Hazelcast for caching results
     and [Routes Service](https://github.com/chriniko13/routes-service) uses Redis for caching results.
+   
     
 11) Screenshots:
+    * [Screenshot1](Selection01.pdf)
+    * [Screenshot2](Selection02.pdf)
     
 
 
