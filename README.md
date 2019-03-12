@@ -586,14 +586,35 @@ Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8' 
             }
         }
     ```
-       
 
-10) If you request again the same itinerary response time is a lot faster due to the fact that
+
+10) See result as a report in kafka, execute: `./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic itineraries-lookup-reports --from-beginning`
+    
+    You should see something like the following:
+    ```
+    {"itinerariesInfoByProcessingCriteria":{"less-connections-and-less-time":[{"fastDisplay":"[Guadalajara ---> Huelva]","noOfConnections":1,
+    "noOfVisitedCities":2,"departureTimeOfItinerary":"2019-03-12T01:13:54Z","arrivalTimeOfItinerary":"2019-03-12T03:13:54Z","timeDurationOfItinerary":"PT2H",
+    "detailedRouteInfo":[{"id":"8760777c-4f0a-4c95-8058-54d18206ec86","city":{"name":"Guadalajara","country":"Spain"},"destinyCity":{"name":"Huelva","country":"Spain"},
+    "departureTime":"2019-03-12T01:13:54Z","arrivalTime":"2019-03-12T03:13:54Z"}]},{"fastDisplay":"[Guadalajara ---> Gijon]","noOfConnections":1,"noOfVisitedCities":2,
+    "departureTimeOfItinerary":"2019-03-12T01:13:54Z","arrivalTimeOfItinerary":"2019-03-12T05:13:54Z","timeDurationOfItinerary":"PT4H",
+    "detailedRouteInfo":[{"id":"85ecaea1-0c98-40b1-b271-94a237df73c5","city":{"name":"Guadalajara","country":"Spain"},"destinyCity":{"name":"Gijon","country":"Spain"},
+    "departureTime":"2019-03-12T01:13:54Z","arrivalTime":"2019-03-12T05:13:54Z"}]},{"fastDisplay":"[Guadalajara ---> Arrecife]","noOfConnections":1,"noOfVisitedCities":2,
+    "departureTimeOfItinerary":"2019-03-12T01:13:54Z","arrivalTimeOfItinerary":"2019-03-12T05:13:54Z","timeDurationOfItinerary":"PT4H",
+    "detailedRouteInfo":[{"id":"f893edb0-e62d-4caf-88de-b95c868bc7ad","city":{"name":"Guadalajara","country":"Spain"},"destinyCity":{"name":"Arrecife","country":"Spain"},
+    "departureTime":"2019-03-12T01:13:54Z","arrivalTime":"2019-03-12T05:13:54Z"}]},{"fastDisplay":"[Guadalajara ---> Jaen ---> Malaga]","noOfConnections":2,"noOfVisitedCities":3,
+    "departureTimeOfItinerary":"2019-03-12T01:13:54Z","arrivalTimeOfItinerary":"2019-03-12T07:13:54Z","timeDurationOfItinerary":"PT6H","detailedRouteInfo"
+    
+    ....
+    
+    ```
+
+
+11) If you request again the same itinerary response time is a lot faster due to the fact that
     [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) uses Hazelcast for caching results
     and [Routes Service](https://github.com/chriniko13/routes-service) uses Redis for caching results.
    
     
-11) Screenshots:
+12) Screenshots:
     * [Screenshot1](Selection01.pdf)
     * [Screenshot2](Selection02.pdf)
     
