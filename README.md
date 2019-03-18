@@ -625,10 +625,6 @@ Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8' 
     
 
 #### TODOs
-* Add security to both microservices
-    * [Itineraries Lookup Service](https://github.com/chriniko13/itineraries-lookup-service) [NOT DONE]
-    * [Routes Service](https://github.com/chriniko13/routes-service) [NOT DONE]
-    
 * Use Spring Cloud, Eureka and Zuul [NOT DONE]
 
 #### Useful Docker Commands
