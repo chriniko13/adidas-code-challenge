@@ -284,6 +284,10 @@ Y8,           i8'    ,8I   i8'    ,8I  I8, ,8I     Y8,           I8P    I8  i8' 
 
 9) Perform Http Request with POST method on url: `http://localhost:8181/api/itinerary-info?allItinerariesInfo=false&allItinerariesInfoDetailed=false`
    
+   * Authentication Needed for HTTP operations
+       * Header, Key: Authorization --- Value: Basic YWRtaW46MTIzNA== (How value is constructed --> Base64.encode(username:password))
+    
+   
    Example Payload:
    ```json
        {
